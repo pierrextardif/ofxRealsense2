@@ -5,14 +5,14 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/iolvq2tckcgdcdrp?svg=true)](https://ci.appveyor.com/project/hiroMTB/ofxrealsense2)
 
 # ofxRealsense2
-This repos is openFrameworks addon for [Intel® RealSense™ SDK 2.0](https://github.com/IntelRealSense/librealsense). You can test your D400 series camera quickly. If you dont have device, you cann still playback BAG files and see how it works (for example performance, postprocessing, depth quality, etc)
+This repos is openFrameworks addon for [Intel® RealSense™ SDK 2.0](https://github.com/IntelRealSense/librealsense), specifically the D435i. You can test your D400 series camera quickly. If you dont have device, you can still playback BAG files and see how it works (for example performance, postprocessing, depth quality, etc).
 
 
 ## Development period
-- 2018.7 ~ active
+- 2019.5 ~ active
 
 ## Version
-- Realsense 2.14.1 (released on 2018.7, this is not latest)
+- Realsense 2.2.22 (released on 2019.01, the latest as of May 2019)
 - libusb 1.0.22
 - openFrameworks 0.10.0, 0.10.1
 
@@ -25,15 +25,28 @@ This repos is openFrameworks addon for [Intel® RealSense™ SDK 2.0](https://gi
 - [x] add bag file playback example
 
 ## Install Realsense SDK
-Follow the official instalaction [here](https://realsense.intel.com/sdk-2/) and check you can launch realsense viewer.
+Follow the official installation [here](https://realsense.intel.com/sdk-2/) and check you can launch realsense viewer.
+OR :
+using brew :
+```
+brew install libusb pkg-config
+brew install homebrew/core/glfw3
+brew install cmake
+brew install librealsense
 
-## Using oF Poroject Generator
+#all of these things should now be visible in /usr/local/lib
+#after brew installing librealsense you should be able to immediately type realsense-viewer into the terminal and see the viewer
+
+```
+
+
+## Using oF Project Generator
 
 This repo does not contain any project file. Please generate project file by yourself.
-Project Generator needs addon_config.make for setting library properly. This repo contain follwing two .make. Please rename your favorite one to addon_config.make.
+Project Generator needs addon_config.make for setting library properly. This repo contain following two .make. Please rename your favorite one to addon_config.make.
 
 - addon_config_shared.make : Generate project file which use shared library(.dylib, .dll + .lib)
-- addon_config_static.make : Generate project file which use static library(.a, .lib). 
+- addon_config_static.make : Generate project file which use static library(.a, .lib).
 
 ## Static library vs Shared library
 
@@ -59,7 +72,7 @@ With Realsense Viewer you can record/playback depth & color stream to bag file. 
 ## Hardware
 - Sometimes I experienced collapesed data stream when I use USB 3.0 extension cable from D435 camera.
 Unplug and plug camera again if you see strange data.
-- The quality of depth data from D400 series is depends on parameter of postprocessing. I recommend to check out [this PDF article](https://realsense.intel.com/wp-content/uploads/sites/63/BKM-For-Tuning-D435-and-D415-Cameras-Webinar_Rev3.pdf) and test with Realsense Viewer. 
+- The quality of depth data from D400 series is depends on parameter of postprocessing. I recommend to check out [this PDF article](https://realsense.intel.com/wp-content/uploads/sites/63/BKM-For-Tuning-D435-and-D415-Cameras-Webinar_Rev3.pdf) and test with Realsense Viewer.
 
 ## Notice
 ### libusb in osx
