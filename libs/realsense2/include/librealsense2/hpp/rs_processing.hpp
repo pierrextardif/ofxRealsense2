@@ -24,7 +24,7 @@ namespace rs2
         * \param[in] profile     Stream profile going to allocate.
         * \param[in] original    Original frame, if new_bpp, new_width, new_height or new_stride is zero, newly created frame will base on original frame's metadata to allocate new frame. If frame_type is RS2_EXTENSION_DEPTH_FRAME, the original of the returned frame will be set to it.
         * \param[in] new_bpp     Frame bit per pixel to create.
-        * \param[in] new_width   Frame width to create.
+         * \param*[in] new_width   Frame width to create.
         * \param[in] new_height  Frame height to create.
         * \param[in] new_stride  Frame stride to crate.
         * \param[in] frame_type  Which frame type are going to create.
