@@ -7,16 +7,24 @@ meta:
 
 common:
 
-	#ADDON_INCLUDES =  libs/realsense2/include/
+	ADDON_INCLUDES =  libs/realsense2/include/
 
+osx:
+    ADDON_LDFLAGS = -rpath ../../../../addons/ofxRealsense2/libs/realsense2/lib/osx
+    ADDON_INCLUDES += /usr/local/opt/libusb/include/libusb-1.0
+
+    #ADDON_LIBS += /usr/local/opt/libusb/lib/libusb-1.0.0.dylib
+
+	# osx/iOS only, any framework that should be included in the project
+	ADDON_FRAMEWORKS += IOKit
+	ADDON_FRAMEWORKS += OpenGL
+	ADDON_FRAMEWORKS += Cocoa
+	ADDON_FRAMEWORKS += CoreVideo
+
+vs:
 linux64:
-	# linux only, any library that should be included in the project using
-	# pkg-config
-
-linuxarmv7l:	
-	ADDON_PKG_CONFIG_LIBRARIES = cuda-10.0 cudart-10.0 libusb-1.0 realsense2 #OpenCL
+linuxarmv6l:
+linuxarmv7l:
+	ADDON_PKG_CONFIG_LIBRARIES = realsense2 cuda-10.0 cudart-10.0 libusb-1.0 #OpenCL
 	ADDON_LDFLAGS = -L/usr/local/lib/ -L/usr/local/cuda/lib64 -lcuda -lcudart
-
-#The library is installed in /usr/local/lib
-#The header files are in /usr/local/include
-#The demos and tools are located in /usr/local/bin
+msys2:

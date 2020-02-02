@@ -1,6 +1,6 @@
 // License: Apache 2.0. See LICENSE file in root directory.
 // Copyright(c) 2015 Intel Corporation. All Rights Reserved.
-/*
+
 #pragma once
 
 #define GLFW_INCLUDE_GLU
@@ -263,12 +263,9 @@ static void draw_pointcloud(float width, float height, glfw_state& app_state, rs
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, 0x812F); // GL_CLAMP_TO_EDGE
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, 0x812F); // GL_CLAMP_TO_EDGE
     glBegin(GL_POINTS);
-*/
+
 
     /* this segment actually prints the pointcloud */
-////
-
-/*
     auto vertices = points.get_vertices();              // get vertices
     auto tex_coords = points.get_texture_coordinates(); // and texture coordinates
     for (int i = 0; i < points.size(); i++)
@@ -327,7 +324,3 @@ static void register_glfw_callbacks(window& app, glfw_state& app_state)
         }
     };
 }
-
-
-
-*/
